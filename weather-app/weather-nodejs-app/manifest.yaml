@@ -3,7 +3,7 @@ kind: Service
 metadata:
   annotations:
     app.openshift.io/runtime: js
-    app.openshift.io/vcs-ref: aaa9894ee3c30c171fa20478bcdd7a7e4beaf21b
+    app.openshift.io/vcs-ref: fb9859126f5e38da8371f7d2aab49621e140ee73
     app.openshift.io/vcs-uri: https://github.com/chrisley75/weather-nodejs-app
   labels:
     app: weather-nodejs-app
@@ -28,7 +28,7 @@ kind: Deployment
 metadata:
   annotations:
     app.openshift.io/runtime: js
-    app.openshift.io/vcs-ref: aaa9894ee3c30c171fa20478bcdd7a7e4beaf21b
+    app.openshift.io/vcs-ref: fb9859126f5e38da8371f7d2aab49621e140ee73
     app.openshift.io/vcs-uri: https://github.com/chrisley75/weather-nodejs-app
   labels:
     app: weather-nodejs-app
@@ -37,7 +37,7 @@ metadata:
   name: weather-nodejs-app
 spec:
   progressDeadlineSeconds: 600
-  replicas: 1
+  replicas: 10
   revisionHistoryLimit: 10
   selector:
     matchLabels:
@@ -48,7 +48,7 @@ spec:
     metadata:
       annotations:
         app.openshift.io/runtime: js
-        app.openshift.io/vcs-ref: aaa9894ee3c30c171fa20478bcdd7a7e4beaf21b
+        app.openshift.io/vcs-ref: fb9859126f5e38da8371f7d2aab49621e140ee73
         app.openshift.io/vcs-uri: https://github.com/chrisley75/weather-nodejs-app
       labels:
         app: weather-nodejs-app
@@ -61,7 +61,7 @@ spec:
         - name: PROTOCOLS
         - name: LOG_LEVEL
           value: debug
-        image: quay.io/chrisley7506/weather-nodejs-app:aaa9894ee3c30c171fa20478bcdd7a7e4beaf21b
+        image: quay.io/chrisley7506/weather-nodejs-app:fb9859126f5e38da8371f7d2aab49621e140ee73
         imagePullPolicy: IfNotPresent
         livenessProbe:
           failureThreshold: 3
@@ -100,7 +100,7 @@ kind: Route
 metadata:
   annotations:
     app.openshift.io/runtime: js
-    app.openshift.io/vcs-ref: aaa9894ee3c30c171fa20478bcdd7a7e4beaf21b
+    app.openshift.io/vcs-ref: fb9859126f5e38da8371f7d2aab49621e140ee73
     app.openshift.io/vcs-uri: https://github.com/chrisley75/weather-nodejs-app
   labels:
     app: weather-nodejs-app
